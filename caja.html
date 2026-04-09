@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caja — StoreOS</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">⬡ StoreOS</a>
+    <a href="index.html">Dashboard</a>
+    <a href="inventario.html">Inventario</a>
+    <a href="caja.html" class="activo">Caja</a>
+    <a href="ventas.html">Ventas</a>
+  </nav>
+
+  <div class="page-header">
+    <h1>Punto de <span>Venta</span></h1>
+    <p>Selecciona productos y confirma la venta</p>
+  </div>
+
+  <div class="controles">
+    <input type="text" id="buscar-caja" placeholder="Buscar producto..." oninput="buscarProductosCaja()">
+    <select id="filtroCategoriaCaja" onchange="filtrarCategoriaCaja()">
+      <option value="">Todas las categorías</option>
+    </select>
+  </div>
+
+  <div class="caja-layout">
+    <div class="caja-productos">
+      <div id="resultado-caja">
+        <p class="sin-resultados">Cargando productos...</p>
+      </div>
+    </div>
+
+    <div class="caja-sidebar">
+      <h2>🛒 Carrito</h2>
+      <div id="carrito-lista">
+        <p class="carrito-vacio">El carrito está vacío.</p>
+      </div>
+      <p id="total">Total: $0.00</p>
+      <button id="btn-confirmar" onclick="confirmarVenta()" disabled>Confirmar Venta</button>
+    </div>
+  </div>
+
+  <!-- Modal Comprobante -->
+  <div id="modal-comprobante" class="modal-overlay oculto">
+    <div class="modal-box">
+      <div id="comprobante-contenido"></div>
+      <button onclick="cerrarComprobante()">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="js/caja.js"></script>
+</body>
+</html>

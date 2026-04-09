@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario — StoreOS</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">⬡ StoreOS</a>
+    <a href="index.html">Dashboard</a>
+    <a href="inventario.html" class="activo">Inventario</a>
+    <a href="caja.html">Caja</a>
+    <a href="ventas.html">Ventas</a>
+  </nav>
+
+  <div class="page-header">
+    <h1>Inven<span>tario</span></h1>
+    <p>Productos cargados desde la API externa · dummyjson.com</p>
+  </div>
+
+  <div class="controles">
+    <input type="text" id="buscar" placeholder="Buscar por nombre..." oninput="buscarProductos()">
+    <select id="filtroCategoria" onchange="filtrarPorCategoria()">
+      <option value="">Todas las categorías</option>
+    </select>
+    <select id="ordenar" onchange="ordenarProductos()">
+      <option value="">Ordenar por precio</option>
+      <option value="asc">Menor a mayor</option>
+      <option value="desc">Mayor a menor</option>
+    </select>
+    <button onclick="location.reload()">↺ Recargar</button>
+  </div>
+
+  <div id="resultado">
+    <p class="sin-resultados">Cargando productos...</p>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/inventario.js"></script>
+</body>
+</html>

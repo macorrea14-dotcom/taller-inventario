@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ventas — StoreOS</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">⬡ StoreOS</a>
+    <a href="index.html">Dashboard</a>
+    <a href="inventario.html">Inventario</a>
+    <a href="caja.html">Caja</a>
+    <a href="ventas.html" class="activo">Ventas</a>
+  </nav>
+
+  <div class="page-header" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+    <div>
+      <h1>Historial de <span>Ventas</span></h1>
+      <p>Registro completo de todas las transacciones</p>
+    </div>
+    <button class="btn-peligro" onclick="limpiarHistorial()">🗑 Limpiar historial</button>
+  </div>
+
+  <div class="main-content">
+    <div id="resumen-ventas"></div>
+    <div id="historial-ventas">
+      <p class="sin-resultados">Cargando historial...</p>
+    </div>
+  </div>
+
+  <script src="js/ventas.js"></script>
+</body>
+</html>
